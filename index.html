@@ -9,6 +9,8 @@
       <br>
       <button onclick="document.getElementById('theme').style = 'background-color: white;'; document.getElementById('inf').style = 'color: black'; document.getElementById('version').style = 'color: black'; document.getElementById('main').style = 'color: black;'; document.getElementById('rules').style = 'color: black'">Light theme</button>
       <button onclick="document.getElementById('theme').style = 'background-color: black;'">Dark theme</button>
+      <button id="ht" onclick="hintTimer()">Start Hint Timer</button><br>
+      <button id="h"style="display: none;" onclick="hint()">Use Hint</button>
       <div id="theme" style="background-color: transparent;">
       <link rel="stylesheet" href="game.css">
       <h1 style="align-self: center; font-size: 100px; display: block;" id="main">Number Guessing Game</h1>
@@ -18,7 +20,8 @@
       <br>  
       <span style="font-size: 60px; color: purple">Streak points:<i id="xp" style="color: green">0</i></span>
       <br><span style="color: blue; font-size: 40px;">best: <i id="highScore" style="color: red;">0</i></span>
-      <br><br><br><br>
+      <br><span style="color: red; font-size: 40px;">best ever: <i id="be">0</i></span>
+      <br><br><br><br>      
       <button id="btn1" class="bts" onclick="f1()">---</button>
       <button id="btn2" class="bts" onclick="f2()">---</button>
       <button id="btn3" class="bts" onclick="f3()">---</button>

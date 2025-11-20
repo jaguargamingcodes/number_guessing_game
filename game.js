@@ -1,5 +1,8 @@
+bestEver = 0;
 bestScore = 0;
 streak = 0;
+
+
 function start() {
     RightRandomNumber = Math.floor(Math.random() * 100)
     secondRandomNumber = Math.floor(Math.random() * 100)
@@ -20,6 +23,39 @@ function start() {
     } 
 }
 
+
+function hint() {
+    if(document.getElementById('btn1').innerHTML == RightRandomNumber) {
+         document.getElementById('btn1').style.backgroundColor = "red;";        
+    } else if(document.getElementById('btn2').innerHTML == RightRandomNumber) {
+        document.getElementById('btn2').style.backgroundColor = 'red';
+    } else if(document.getElementById('btn3').innerHTML == RightRandomNumber) {
+        document.getElementById('btn3').style.backgroundColor = 'red';
+    } else {
+        throw new Error(`Error@ ${document.title}`);
+        
+    }
+        document.getElementById('h').style.display = "none"
+        setTimeout(function(){    if(document.getElementById('btn1').innerHTML == RightRandomNumber) {
+         document.getElementById('btn1').style.backgroundColor = "greenyellow";        
+    } else if(document.getElementById('btn2').innerHTML == RightRandomNumber) {
+        document.getElementById('btn2').style.backgroundColor = 'greenyellow';
+    } else if(document.getElementById('btn3').innerHTML == RightRandomNumber) {
+        document.getElementById('btn3').style.backgroundColor = 'greenyellow';
+    } else {
+        throw new Error(`Error@ ${document.title}`);
+        
+    }},1000 * 2)
+}
+
+function appear() {
+    document.getElementById('h').style.display = 'block'
+}
+
+function hintTimer() {
+    setTimeout(appear, 1000 * 10)
+}
+
 function inc() {
     streak++;
     document.getElementById("xp").innerHTML = streak;
@@ -27,6 +63,8 @@ function inc() {
         bestScore = streak;
         document.getElementById('highScore').innerHTML = bestScore;
         console.log(streak)
+    } else if(document.getElementById('be').innerHTML == 0 || document.getElementById('be').innerHTML < streak || document.getElementById('be').innerHTML < bestScore) {
+        bestEver = bestScore;
     }
 }
 
@@ -64,4 +102,5 @@ function f3() {
         window.alert("YOU DIED!!!");
     }
 }
+
 
