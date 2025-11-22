@@ -43,7 +43,7 @@ function appear() {
 }
 
 function hintTimer() {
-    setTimeout(appear, 1000 * 0.5)
+    setTimeout(appear, 1000 * 30)
 }
 
 function inc() {
