@@ -1,6 +1,7 @@
 bestEver = localStorage.getItem("bestEver") || 0
 bestScore = 0;
 streak = 0;
+const mon = new Date().getMonth();
 
 function start() {
 
@@ -99,4 +100,15 @@ function f3() {
     }
 }
 
-console.log(RightRandomNumber)
+if(mon === 10 || mon === 11 || mon === 0 || mon === 1 || mon === 2) {
+    document.body.style.backgroundImage = "url('https://t4.ftcdn.net/jpg/01/78/03/83/360_F_178038332_TVgrU6KKD4lhXvtk2M5NxSHFaYglDSwW.jpg')";
+} else if(mon === 3 || mon === 4 || mon === 5) {
+    document.body.style.backgroundImage = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLfQHp9TAE_jVDKg0tZ_vff2f5U7QMIJKfNA&s')";
+} else if(mon === 6 || mon === 7 || mon === 8) {
+    document.body.style.backgroundImage = "url('https://miro.medium.com/v2/resize:fit:1400/0*1DtL639ZXJQj8ZDA.jpg')";
+} else if(mon === 9) {
+    document.body.style.backgroundImage = "url('https://img.freepik.com/free-photo/digital-art-halloween-illustration_23-2151822706.jpg?semt=ais_hybrid&w=740&q=80')";
+}
+
+
+console.log(mon)
